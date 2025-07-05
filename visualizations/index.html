@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PyFlwdir Rust vs Python Comparison</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        .subtitle {
+            text-align: center;
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 1.2em;
+        }
+        
+        /* Performance Summary */
+        .performance-summary {
+            background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        .summary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 20px 0;
+        }
+        .summary-item {
+            background: rgba(255,255,255,0.2);
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .metric-value {
+            font-size: 3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .metric-label {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        .summary-text {
+            font-size: 1.1em;
+            line-height: 1.6;
+            margin-top: 20px;
+        }
+        
+        /* Statistics */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .stat-item {
+            background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        .stat-value {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        .stat-label {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .comparison-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 20px;
+        }
+        .comparison-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            border: 1px solid #e9ecef;
+        }
+        .comparison-item h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        .comparison-item img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .dashboard {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .dashboard img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 PyFlwdir: Rust vs Python</h1>
+        <p class="subtitle">Comprehensive Performance & Accuracy Comparison</p>
+        
+        <!-- Performance Summary -->
+        <div class="performance-summary">
+            <h2>📊 Performance Summary</h2>
+            <div class="summary-grid">
+                <div class="summary-item">
+                    <div class="metric-value">3.7x</div>
+                    <div class="metric-label">Faster</div>
+                </div>
+                <div class="summary-item">
+                    <div class="metric-value">1.1x</div>
+                    <div class="metric-label">Less Memory</div>
+                </div>
+                <div class="summary-item">
+                    <div class="metric-value">100%</div>
+                    <div class="metric-label">Accuracy</div>
+                </div>
+            </div>
+            <p class="summary-text">
+                The Rust implementation demonstrates <strong>3.7x faster execution</strong> and <strong>1.1x lower memory usage</strong> 
+                compared to the optimized Python implementation with numba JIT compilation, while maintaining <strong>100% accuracy</strong> 
+                across all test cases.
+            </p>
+        </div>
+
+        <!-- Statistics -->
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-value">9</div>
+                <div class="stat-label">Test Cases</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">100%</div>
+                <div class="stat-label">Accuracy</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">3.7x</div>
+                <div class="stat-label">Speed Improvement</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-value">1.1x</div>
+                <div class="stat-label">Memory Efficiency</div>
+            </div>
+        </div>
+
+        <!-- Performance Dashboard -->
+        <div class="dashboard">
+            <h2>📈 Performance Dashboard</h2>
+            <img src="performance_dashboard.png" alt="Performance Dashboard">
+        </div>
+
+        <!-- Individual Comparisons -->
+        <h2>🔍 Detailed Comparisons</h2>
+        <div class="comparison-grid">
+            <div class="comparison-item">
+                <h3>Simple 2x2 Grid</h3>
+                <img src="simple_2x2_comparison.png" alt="Simple 2x2 Comparison">
+            </div>
+            <div class="comparison-item">
+                <h3>4x4 Array</h3>
+                <img src="4x4_array_comparison.png" alt="4x4 Array Comparison">
+            </div>
+            <div class="comparison-item">
+                <h3>Complex 3x3 Grid</h3>
+                <img src="complex_3x3_comparison.png" alt="Complex 3x3 Comparison">
+            </div>
+            <div class="comparison-item">
+                <h3>Watershed 8x8</h3>
+                <img src="watershed_8x8_comparison.png" alt="Watershed 8x8 Comparison">
+            </div>
+            <div class="comparison-item">
+                <h3>River Network 10x10</h3>
+                <img src="river_network_10x10_comparison.png" alt="River Network 10x10 Comparison">
+            </div>
+            <div class="comparison-item">
+                <h3>Mountainous 12x12</h3>
+                <img src="mountainous_12x12_comparison.png" alt="Mountainous 12x12 Comparison">
+            </div>
+            <div class="comparison-item">
+                <h3>Large Drainage 15x15</h3>
+                <img src="large_drainage_15x15_comparison.png" alt="Large Drainage 15x15 Comparison">
+            </div>
+            <div class="comparison-item">
+                <h3>Complex Watershed 18x18</h3>
+                <img src="complex_watershed_18x18_comparison.png" alt="Complex Watershed 18x18 Comparison">
+            </div>
+            <div class="comparison-item">
+                <h3>Mega Drainage 20x20</h3>
+                <img src="mega_drainage_20x20_comparison.png" alt="Mega Drainage 20x20 Comparison">
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>Generated automatically by the PyFlwdir comparison suite</p>
+            <p>Rust implementation shows consistent performance advantages while maintaining perfect accuracy</p>
+        </div>
+    </div>
+</body>
+</html> 

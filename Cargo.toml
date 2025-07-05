@@ -1,0 +1,7 @@
+[workspace]
+members = ["pyflwdir-rs", "comparison"]
+resolver = "2"
+
+[workspace.dependencies]
+ndarray = "0.15"
+thiserror = "1.0" 

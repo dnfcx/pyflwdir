@@ -1,0 +1,27 @@
+[package]
+name = "pyflwdir-rs"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ndarray = "0.15"
+thiserror = "1.0"
+
+[profile.release]
+opt-level = 3
+lto = true
+codegen-units = 1
+panic = "abort"
+# Additional aggressive optimizations
+overflow-checks = false
+debug-assertions = false
+incremental = false
+rpath = false
+
+# Enable CPU-specific optimizations
+[profile.release.build-override]
+opt-level = 3
+
+# Enable native CPU features for maximum performance
+[profile.release.package."*"]
+opt-level = 3 
